@@ -10,13 +10,13 @@
 
 ## Solution Overview
 
-- **Approach**: `Uses a HashMap to count frequencies of each element, then scans the array again to find any count greater than one.` (Alternative: `Use a HashSet to detect duplicates during a single pass, returning true immediately when an element is already present.`)
+- **Approach**: `Hash Map counting frequencies` (Alternative: `Hash Map with early exit (return true as soon as a duplicate is found) or sort‑in‑place and scan adjacent elements`)
 - **Time Complexity**: `O(N)`
-- **Space Complexity**: `O(N)`
-- **Key Idea**: Iterate through the array, inserting each number into a set. If insertion fails because the number is already in the set, a duplicate exists and the function returns true. Otherwise, after the loop, return false.
-- **Alternatives**: Sorting the array and checking adjacent elements gives O(N log N) time with O(1) auxiliary space, whereas the hash-based approach offers O(N) time with O(N) space.
-- **Considerations**: Handle empty or single-element arrays (no duplicates). Negative numbers and large values are fine because the hash structure stores them as keys. The algorithm works for any integer range within Java’s int limits.
-- **Optimization Notes**: The current implementation performs two linear passes; it can be optimized to a single pass by checking the map during insertion. All operations on the hash map are O(1) on average, keeping the overall time linear.
+- **Space Complexity**: `O(1)`
+- **Key Idea**: The algorithm iterates over the array, storing each element’s count in a hash map. If any element’s count exceeds one, a duplicate exists and the function returns true. This guarantees linear time because each lookup and insertion is O(1) on average. The second loop is redundant and can be removed for a cleaner implementation.
+- **Alternatives**: Using a hash set with early exit offers O(N) time and O(N) space, while sorting the array and checking adjacent pairs achieves O(N log N) time but only O(1) auxiliary space.
+- **Considerations**: Edge cases include empty arrays, single‑element arrays, negative numbers, and large integer values—all handled naturally by the hash map. Duplicates at the end of the array are detected just as efficiently as those at the beginning. The algorithm remains correct regardless of input order or distribution.
+
 
 ## Source Code (Java)
 
