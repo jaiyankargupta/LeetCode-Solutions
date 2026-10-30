@@ -4,7 +4,7 @@
 ![Platform](https://img.shields.io/badge/Platform-LeetCode-c2572b?style=flat-square)
 ![Language](https://img.shields.io/badge/Language-Java-0284c7?style=flat-square)
 
-[View Problem on LeetCode](https://leetcode.com/problems/contains-duplicate/submissions/2185265717/)
+[View Problem on LeetCode](https://leetcode.com/problems/contains-duplicate/submissions/2185263825/)
 
 ---
 
