@@ -10,13 +10,13 @@
 
 ## Solution Overview
 
-- **Approach**: `Hash Map counting frequencies` (Alternative: `Hash Map with early exit (return true as soon as a duplicate is found) or sort‑in‑place and scan adjacent elements`)
+- **Approach**: `HashMap counting frequencies and a second pass to detect duplicates` (Alternative: `HashSet with early exit on first duplicate`)
 - **Time Complexity**: `O(N)`
-- **Space Complexity**: `O(1)`
-- **Key Idea**: The algorithm iterates over the array, storing each element’s count in a hash map. If any element’s count exceeds one, a duplicate exists and the function returns true. This guarantees linear time because each lookup and insertion is O(1) on average. The second loop is redundant and can be removed for a cleaner implementation.
-- **Alternatives**: Using a hash set with early exit offers O(N) time and O(N) space, while sorting the array and checking adjacent pairs achieves O(N log N) time but only O(1) auxiliary space.
-- **Considerations**: Edge cases include empty arrays, single‑element arrays, negative numbers, and large integer values—all handled naturally by the hash map. Duplicates at the end of the array are detected just as efficiently as those at the beginning. The algorithm remains correct regardless of input order or distribution.
-
+- **Space Complexity**: `O(N)`
+- **Key Idea**: Insert each number into a set; if insertion fails, a duplicate exists. This gives O(N) time and O(N) space. The second loop is unnecessary.
+- **Alternatives**: Sorting + linear scan uses O(N log N) time and O(1) auxiliary space, while a HashSet keeps O(N) time and O(N) space.
+- **Considerations**: Edge cases include empty arrays and arrays with all identical elements. The algorithm handles them correctly. The map may grow to size N, but this is acceptable for the constraints.
+- **Optimization Notes**: The current implementation performs two linear passes; a single pass with a HashSet would avoid the second loop and reduce constant factors.
 
 ## Source Code (Java)
 
