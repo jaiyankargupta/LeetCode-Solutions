@@ -8,6 +8,15 @@
 
 ---
 
+## Solution Overview
+
+- **Approach**: `Uses a HashMap to count frequencies of each element, then scans the array again to find any count greater than one.` (Alternative: `Use a HashSet to detect duplicates during a single pass, returning true immediately when an element is already present.`)
+- **Time Complexity**: `O(N)`
+- **Space Complexity**: `O(N)`
+- **Key Idea**: Iterate through the array, inserting each number into a set. If insertion fails because the number is already in the set, a duplicate exists and the function returns true. Otherwise, after the loop, return false.
+- **Alternatives**: Sorting the array and checking adjacent elements gives O(N log N) time with O(1) auxiliary space, whereas the hash-based approach offers O(N) time with O(N) space.
+- **Considerations**: Handle empty or single-element arrays (no duplicates). Negative numbers and large values are fine because the hash structure stores them as keys. The algorithm works for any integer range within Java’s int limits.
+- **Optimization Notes**: The current implementation performs two linear passes; it can be optimized to a single pass by checking the map during insertion. All operations on the hash map are O(1) on average, keeping the overall time linear.
 
 ## Source Code (Java)
 
