@@ -10,13 +10,13 @@
 
 ## Solution Overview
 
-- **Approach**: `HashSet`
+- **Approach**: `Optimal`
 - **Time Complexity**: `O(N)`
-- **Space Complexity**: `O(N)`
-- **Key Idea**: Iterate through the array, inserting each element into a HashSet. If an element is already present, a duplicate exists and the function returns true. Otherwise, after the loop, return false. This guarantees O(1) average lookup and insertion per element.
-- **Alternatives**: Sorting the array and scanning for adjacent equals gives O(N log N) time and O(1) auxiliary space, but is slower than the hash‑based approach.
-- **Considerations**: Edge cases include empty arrays, single‑element arrays, negative numbers, and duplicates at the very beginning or end. The algorithm handles all these correctly because it checks membership before insertion. The HashSet automatically manages hash collisions, ensuring consistent performance across diverse inputs.
-- **Optimization Notes**: The loop runs once per element, with constant‑time set operations. No nested loops or expensive operations are present, so the runtime scales linearly with input size.
+- **Space Complexity**: `O(1)`
+
+
+
+
 
 ## Source Code (Java)
 
